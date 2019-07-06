@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Move : MonoBehaviour {
 
-	public Vector3 goal = new Vector3(5,0,4);
-	public float speed=0.1f;
+	Vector3 goal = new Vector3(5,0,4);
 
 	void Start () {
-		
+		this.transform.Translate(goal);
 	}
 	
 	void Update () 
 	{
-		this.transform.Translate(goal*speed*Time.deltaTime);
+		
 	}
 }
