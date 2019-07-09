@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveLocal : MonoBehaviour {
 
 	public Transform goal;
-	public float speed = 0.5f;
-	float accuracy=1.0f;
+	public float speed = 2.0f;
+	float accuracy=0.01f;
 
 	
 
@@ -17,11 +17,11 @@ public class MoveLocal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-	Vector3 lookAtGoal = new Vector3(goal.position.x,this.transform.position.y,goal.position.z);
-this.transform.LookAt(lookAtGoal);
-if(Vector3.Distance(transform.position,lookAtGoal) > accuracy);
-this.transform.Translate(0,0,speed*Time.deltaTime);
-}
+this.transform.LookAt(goal.position);
+ Vector3 direction = goal.position - this.transform.position;
+		Debug.DrawRay(this.transform.position,direction,Color.red);
+		if(direction.magnitude>accuracy)
+			this.transform.Translate(direction.normalized * speed * Time.deltaTime,Space.World);}
 	
 
 }
