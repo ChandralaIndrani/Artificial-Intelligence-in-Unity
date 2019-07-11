@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed597095f0fde46f69a909ff8ebff2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 41621477}
-  speed: 1
+  goal: {fileID: 0}
+  speed: 2
 --- !u!95 &177918745
 Animator:
   serializedVersion: 3
@@ -252,7 +252,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3c90d75d090136b429461873af7f9f1f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 079a14602eddc4f8ca4bb47450211b3f, type: 2}
     - target: {fileID: 9500000, guid: 3d664c5f262774eb49e3928ca6b6db2a, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d664c5f262774eb49e3928ca6b6db2a, type: 3}
@@ -628,6 +628,10 @@ PrefabInstance:
     - target: {fileID: 100066, guid: 1b7945602ded3ec43804b120aa9ed037, type: 3}
       propertyPath: m_Name
       value: LumberJack
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066, guid: 1b7945602ded3ec43804b120aa9ed037, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 1b7945602ded3ec43804b120aa9ed037, type: 3}
       propertyPath: m_LocalPosition.x

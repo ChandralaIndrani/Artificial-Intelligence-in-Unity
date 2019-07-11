@@ -22,8 +22,8 @@ public class MoveLocal : MonoBehaviour {
  Vector3 direction = lookAtGoal - this.transform.position;
  this.transform.rotation = Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction),Time.deltaTime*rotSpeed);
 		Debug.DrawRay(this.transform.position,direction,Color.red);
-		if(Vector3.Distance (transform.position,lookAtGoal) > accuracy)
-			this.transform.Translate(0,0,speed*Time.deltaTime);
+		//if(Vector3.Distance (transform.position,lookAtGoal) > accuracy)
+			//this.transform.Translate(0,0,speed*Time.deltaTime);
 			}
 	
 
