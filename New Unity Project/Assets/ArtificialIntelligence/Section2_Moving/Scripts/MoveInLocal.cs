@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveLocal : MonoBehaviour {
+public class MoveInLocal : MonoBehaviour {
 
 	public Transform goal;
 	public float speed = 2.0f;
