@@ -5,11 +5,11 @@ using UnityEngine;
 public class SimpleAIScript : MonoBehaviour {
 	public Transform goal;
 	//public text readout;
-	float acceleration = 5f;
-	float deceleration = 5f;
-	float minSpeed = 0.0f;
-	float maxSpeed = 100.0f;
-	float brakeAngle=20.0f;
+	public float acceleration = 5f;
+	public float deceleration = 5f;
+	public float minSpeed = 0.0f;
+	public float maxSpeed = 100.0f;
+	public float brakeAngle=20.0f;
 public float rotSpeed = 1.0f;
 	float speed = 0.0f;
 
@@ -22,7 +22,7 @@ public float rotSpeed = 1.0f;
 	void LateUpdate () {
 	Vector3 lookAtGoal = new Vector3(goal.position.x,this.transform.position.y,goal.position.z);
 	Vector3 direction = lookAtGoal - this.transform.position;
-	if(Vector3.Angle(goal.forward,this.transform.forward) > brakeAngle)
+	if(Vector3.Angle(goal.forward,this.transform.forward) > brakeAngle && speed>10)
 	{
 	//this.transform.rotation = Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction),Time.deltaTime*rotSpeed);
 	speed = Mathf.Clamp(speed - (deceleration*Time.deltaTime),minSpeed,maxSpeed);
