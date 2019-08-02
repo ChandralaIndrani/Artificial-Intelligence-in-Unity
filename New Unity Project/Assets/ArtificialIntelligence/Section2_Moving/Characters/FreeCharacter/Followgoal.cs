@@ -5,9 +5,8 @@ using UnityEngine;
 public class MoveLocal : MonoBehaviour {
 
 	public Transform goal;
-	public float speed = 2.0f;
-	float accuracy = 1.0f;
-	float rotSpeed=0.4f;
+	float speed = 100.0f;
+	float rotSpeed=10.0f;
 
 	
 
