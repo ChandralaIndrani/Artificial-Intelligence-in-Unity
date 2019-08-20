@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIControl : MonoBehaviour
-{
-public GameObject goal;
-public NavMeshAgent agent;
-    // Start is called before the first frame update
-    void Start()
-    {
-       agent =this.GetComponent<NavMeshAgent>(); 
-	   agent.SetDestination(goal.transform.position);
-    }
-	void Update()
-	{
-	
+public class AIControl : MonoBehaviour {
+
+	GameObject[] goalLocations;
+	UnityEngine.AI.NavMeshAgent agent;
+	Animator anim;
+
+	// Use this for initialization
+	void Start () {
+		goalLocations = GameObject.FindGameObjectsWithTag("goal");
+		agent = this.GetComponent<UnityEngine.AI.NavMeshAgent>();
+		agent.SetDestination(goalLocations[Random.Range(0,goalLocations.Length)].transform.position);
+		anim = this.GetComponent<Animator>();
+		//anim.setTrigger("isWalking");
 	}
-    // Update is called once per frame
-    
+	
+	// Update is called once per frame
+	void Update () {
+	if(agent.remainingDistance < 1)
+		{
+			agent.SetDestination(goalLocations[Random.Range(0,goalLocations.Length)].transform.position);
+		}
+	}
 }
