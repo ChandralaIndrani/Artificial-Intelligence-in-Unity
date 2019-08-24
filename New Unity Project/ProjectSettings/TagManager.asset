@@ -7,6 +7,7 @@ TagManager:
   - waypoints
   - ai
   - goal
+  - agent
   layers:
   - Default
   - TransparentFX
