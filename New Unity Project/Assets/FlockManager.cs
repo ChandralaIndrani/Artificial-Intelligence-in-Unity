@@ -31,14 +31,14 @@ public class FlockManager : MonoBehaviour {
 			allFish[i] = (GameObject) Instantiate(fishPrefab, pos, Quaternion.identity);
 			allFish[i].GetComponent<Flock>().myManager = this;
 		}
-		//goalPos = this.transform.position;
+		goalPos = this.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//if(Random.Range(0,100)<10)
-			//goalPos = this.transform.position + new Vector3(Random.Range(-swimLimits.x,swimLimits.x),
-				                      					//Random.Range(-swimLimits.y,swimLimits.y),
-				                      					//Random.Range(-swimLimits.z,swimLimits.z));
+		if(Random.Range(0,100)<10)
+			goalPos = this.transform.position + new Vector3(Random.Range(-swimLimits.x,swimLimits.x),
+				                      					Random.Range(-swimLimits.y,swimLimits.y),
+				                      					Random.Range(-swimLimits.z,swimLimits.z));
 	}
 }
