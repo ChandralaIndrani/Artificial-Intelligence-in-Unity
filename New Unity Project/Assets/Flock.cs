@@ -23,16 +23,18 @@ public class Flock : MonoBehaviour {
 		//if fish is outside the bounds of the cube or about to hit something 
 		//then start turning around
 		RaycastHit hit = new RaycastHit();
-		Vector3 direction = Vector3.zero;
+		Vector3 direction = Vector3.zero; 
+		//Vector3 direction = Vector3.zero;
 
-		if(!b.Contains(transform.position) )
+		if( !b.Contains(transform.position))
 		{
 			turning = true;
-			direction = myManager.transform.position - transform.position;
-		} 
-		else if (Physics.Raycast(transform.position, this.transform.forward * 50, out hit))
+			direction = myManager.transform.position - transform.position; 
+		}
+		else if (Physics.Raycast(transform.position, this.transform.forward * 50, out hit)) 
 		{
 			turning = true;
+			// Debug.DrawRay(this.transform.position, this.transform.forward*50,Color.red);
 			direction = Vector3.Reflect(this.transform.forward,hit.normal);
 		}
 		else
@@ -41,7 +43,8 @@ public class Flock : MonoBehaviour {
 		if(turning)
 		{
 			//turn towards the centre of the manager cube
-			
+			;
+
 			transform.rotation = Quaternion.Slerp(transform.rotation,
 					                                  Quaternion.LookRotation(direction), 
 					                                  myManager.rotationSpeed * Time.deltaTime);

@@ -39,6 +39,6 @@ public class FlockManager : MonoBehaviour {
 		if(Random.Range(0,100)<10)
 			goalPos = this.transform.position + new Vector3(Random.Range(-swimLimits.x,swimLimits.x),
 				                      					Random.Range(-swimLimits.y,swimLimits.y),
-				                      					Random.Range(-swimLimits.z,swimLimits.z));
+				                      					 Random.Range(-swimLimits.z,swimLimits.z));
 	}
 }
