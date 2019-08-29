@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Patrol :StateMachineBehaviour {
-    GameObject NPC;
+public class Patrol :NPCBaseFSM {
+    //GameObject NPC;
 	GameObject[] waypoints;
 	int currentWP;
-	float accuracy;
-	int rotSpeed;
-	int speed;
+	//float accuracy;
+//	int rotSpeed;
+	//int speed;
 
 	void Awake()
 	{
-		waypoints = GameObject.FindGameObjectsWithTag("waypoint");
+		waypoints = GameObject.FindGameObjectsWithTag("waypoints");
 	}	
 
 	 // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -27,7 +27,7 @@ public class Patrol :StateMachineBehaviour {
 
 		if(waypoints.Length == 0) return;
 		if(Vector3.Distance(waypoints[currentWP].transform.position, 
-							NPC.transform.position) < 3.0f)
+							NPC.transform.position) < accuracy)
 		{
 			currentWP++;
 			if(currentWP >= waypoints.Length)
@@ -40,8 +40,8 @@ public class Patrol :StateMachineBehaviour {
 		var direction = waypoints[currentWP].transform.position - NPC.transform.position;
 		NPC.transform.rotation = Quaternion.Slerp(NPC.transform.rotation,
 									Quaternion.LookRotation(direction), 
-									1.0f * Time.deltaTime);
-		NPC.transform.Translate(0, 0, Time.deltaTime * 2.0f);
+									rotSpeed * Time.deltaTime);
+		NPC.transform.Translate(0, 0, Time.deltaTime * speed);
 	}
 
 	// OnStateExit is called when a transition ends and the state machine finishes evaluating this state
