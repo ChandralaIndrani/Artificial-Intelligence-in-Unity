@@ -54,17 +54,16 @@ public class AIS : MonoBehaviour
 		Vector3 dest = new Vector3(Random.Range(-100,100),0,Random.Range(-100,100));
 		agent.SetDestination(dest);
 		Task.current.Succeed();
-
-	}
-		[Task]
-	public void MoveToDestination()
+}
+[Task]
+public void MoveToDestination()
+{
+	if(Task.isInspected)
+	Task.current.debugInfo = string.Format("t={0:0.00}",Time.time);
+	if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
 	{
-		if(Task.isInspected)
-		Task.current.debugInfo = string.Format("t={0:0.00}", Time.time);
-		if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
-		{
-			Task.current.Succeed();
-		}
+		Task.current.Succeed();
 	}
+}
 }
 

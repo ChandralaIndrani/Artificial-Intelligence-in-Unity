@@ -1171,11 +1171,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 854148011}
-  bulletSpawn: {fileID: 1942305795}
+  bulletSpawn: {fileID: 0}
   healthBar: {fileID: 504840183}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 1915206277}
   destination: {x: 0, y: 0, z: 0}
   target: {x: 0, y: 0, z: 0}
+--- !u!114 &1455764655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455764653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914996e6d944d5d4db787523611e9649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: 524e8b69d4b1c47a78ae89f50356a7f0, type: 3}
+  autoReset: 1
+  tickOn: 0
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
 --- !u!4 &1455764656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: f522d7a6ae22b4349bb8a2aa6cfb6bff,
@@ -1704,11 +1726,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1942305795 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400006, guid: f522d7a6ae22b4349bb8a2aa6cfb6bff,
+--- !u!1 &1915206277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: f522d7a6ae22b4349bb8a2aa6cfb6bff,
     type: 3}
-  m_PrefabInstance: {fileID: 88737281}
+  m_PrefabInstance: {fileID: 1737593758}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1982727310
 GameObject:
