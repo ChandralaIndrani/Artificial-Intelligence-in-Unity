@@ -49,6 +49,13 @@ public class AIS : MonoBehaviour
         }
     }
 	[Task]
+	public void PickDestination(float x,float z)
+	{
+		Vector3 dest = new Vector3(x,0,z);
+		agent.SetDestination(dest);
+		Task.current.Succeed();
+	}
+	[Task]
 	public void PickRandomDestination()
 	{
 		Vector3 dest = new Vector3(Random.Range(-100,100),0,Random.Range(-100,100));
@@ -64,6 +71,34 @@ public void MoveToDestination()
 	{
 		Task.current.Succeed();
 	}
+	}
+	[Task]
+	public void TargetPLayer()
+	{
+		target = player.transform.position;
+		Task.current.Succeed();
+	}
+	[Task]
+	public void LookAtTarget()
+	{
+		Vector3 direction= target - this.transform.position;
+		this.transform.rotation = Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(direction),Time.deltaTime*rotSpeed);
+		//Debug.Log(Vector3.Angle(this.transform.forward,direction));
+		if(Task.isInspected)
+		Task.current.debugInfo = string.Format("angle={0}", Vector3.Angle(this.transform.forward,direction));
+		if(Vector3.Angle(this.transform.forward,direction)<5.0f)
+		{
+			Task.current.Succeed();
+		}
+    }
+		[Task]
+		public void Fire()
+		{
+		GameObject bullet = GameObject.Instantiate(bulletPrefab,bulletSpawn.transform.position,bulletSpawn.transform.rotation);
+		bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward*2000);
+		//return true;
+		}
+
 }
-}
+
 
