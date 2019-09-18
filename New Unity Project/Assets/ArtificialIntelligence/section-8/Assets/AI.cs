@@ -173,7 +173,7 @@ public class AI : MonoBehaviour
     public bool Explode()
     {
         Destroy(healthBar.gameObject);
-        Destroy(this.gameObject);
+	        Destroy(this.gameObject);
         return true;
     }
 
