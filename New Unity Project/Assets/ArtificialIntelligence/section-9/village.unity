@@ -438,6 +438,8 @@ GameObject:
   - component: {fileID: 743796551}
   - component: {fileID: 743796549}
   - component: {fileID: 743796552}
+  - component: {fileID: 743796550}
+  - component: {fileID: 743796553}
   m_Layer: 0
   m_Name: Baker
   m_TagString: Untagged
@@ -529,7 +531,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 8.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -553,6 +555,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f02ba14e175bd413fa1b64729c5b6a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &743796550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743796543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290f31d1722e5fb46b026c245f680920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: BakeBread
+  cost: 1
+  target: {fileID: 540438561}
+  workDuration: 2
 --- !u!114 &743796551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +597,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flourLevel: 5
   breadLevel: 0
+--- !u!114 &743796553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743796543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5b8b153f203de479a3088512b65052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: PickupFlour
+  cost: 1
+  target: {fileID: 1279486380}
+  workDuration: 2
 --- !u!1 &818579530
 GameObject:
   m_ObjectHideFlags: 0
