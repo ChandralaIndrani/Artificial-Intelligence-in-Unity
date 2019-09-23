@@ -19,6 +19,7 @@ public class Worker : MonoBehaviour, IGoap
 	{
 		HashSet<KeyValuePair<string,object>> worldData = new HashSet<KeyValuePair<string,object>> ();
 		worldData.Add(new KeyValuePair<string, object>("hasFlour", (inv.flourLevel > 1) ));
+		worldData.Add(new KeyValuePair<string, object>("hasDelivery", (inv.breadLevel > 5) ));
 		return worldData;
 	}
 
