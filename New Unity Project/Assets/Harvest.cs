@@ -2,18 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickupFlour : GoapAction {
+public class Harvest : GoapAction {
 
 	bool completed = false;
 	float startTime = 0;
 	public float workDuration = 2; // seconds
-	public Inventory windmill;
+	public Inventory inv;
 	
-	public PickupFlour () {
-	    addPrecondition("hasStock" , true);
-		addPrecondition ("hasFlour", false); 
-		addEffect ("hasFlour", true);
-		name = "PickupFlour";
+	public Harvest () {
+	   addEffect ("doJob", true);
+		name = "Harvest";
 	}
 	
 	public override void reset ()
@@ -48,12 +46,9 @@ public class PickupFlour : GoapAction {
 		if (Time.time - startTime > workDuration) 
 		{
 			Debug.Log("Finished: " + name);
-			this.GetComponent<Inventory>().flourLevel += 5;
-			windmill.flourLevel -=5;
 			completed = true;
 		}
 		return true;
 	}
 	
 }
- 
